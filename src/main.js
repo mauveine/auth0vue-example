@@ -31,11 +31,6 @@ app
   .use(createPinia())
   .mount('#app')
 
-// TODO: make this environment variable using .env.local.local or similar.
-if(process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = 'https://pecan.lndo.site/api';
-} else {
-  axios.defaults.baseURL = '/api/';
-}
+axios.defaults.baseURL = '/api/'
 
 app.config.globalProperties.axios = axios
